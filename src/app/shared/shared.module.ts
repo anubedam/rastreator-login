@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { FooterLinksComponent } from './footer-links/footer-links.component';
+import { BaseModule } from '../base/base.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { FooterLinksComponent } from './footer-links/footer-links.component';
     FooterLinksComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BaseModule
   ],
   exports: [
     HeaderMenuComponent,
