@@ -34,7 +34,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 24px;
+        gap: 40px;
+
+        &__schedule {
+            font-weight: 400 !important;
+            font-size: 16px !important;
+            line-height: 22px !important;
+        }
 
         &__business-name {
             order: 2;
@@ -43,8 +49,18 @@
 
     .contact-data {
         order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
+    .header { 
+        padding: 32px 48px;
+    }
+}
+
+/* From lg */
+@media (min-width: 1200px) {
     .header { 
         padding: 32px 140px;
     }
@@ -55,16 +71,31 @@
         flex-direction: row;
         color: colors.$adeslas-color;
         align-items: center;
+        line-height: 26px !important;
+        gap: 4px;
 
         &__icon {
-            line-height: 26px !important;
             font-size: 16px !important;
-            width: 20px !important;
+            width: 16px !important;
         }
 
         &__number {
             font-weight: 700 !important;
             font-size: 14px !important;
-            line-height: 26px !important;
         }
+}
+
+/* From md */
+@media (min-width: 900px) {
+    .phone {
+        &__icon {
+            font-size: 24px !important;
+            width: 24px !important;
+        }
+
+        &__number {
+            font-weight: 700 !important;
+            font-size: 24px !important;
+        }
+    }
 }
