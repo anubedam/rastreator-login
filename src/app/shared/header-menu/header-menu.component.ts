@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContactData } from '../interfaces/contact-data.interface';
 
 @Component({
   selector: 'app-header-menu',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-menu.component.scss']
 })
 export class HeaderMenuComponent {
+  contactData: ContactData;
 
+  constructor() {
+    this.contactData = {
+      businessName: 'by Rastreator',
+      phone: '900 000 000',
+      schedule: 'L-V de 9:00 a 18:45'
+    };
+  }
 }
