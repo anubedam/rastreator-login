@@ -1,0 +1,54 @@
+@use "../../sass/colors";
+@use "../../sass/typography";
+
+.footer-links {
+    background-color: colors.$background-color-footer;
+    padding: 47px 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.legal {
+    &__options {
+        display: flex;
+        gap: 8px;
+        margin: 0;
+
+        li {
+            padding-block: 0;
+            padding-right: 16px;
+
+            a{
+                font-family: typography.$rising-sun-font;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+                color: colors.$white;
+                text-decoration: none;
+            }
+        }
+
+        li:not(:first-of-type) {
+            padding-left: 16px;
+        }
+    }
+}
+
+.privacy-policy {
+    color: colors.$white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    &__advice {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__icon {
+        font-size: 24px;
+    }
+}

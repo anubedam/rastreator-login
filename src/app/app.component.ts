@@ -13,6 +13,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     // ONLY FOR DEMO PURPOSE -- Send email test
-    this.mailService.sendEmail().then(result => console.log(result));
+    // this.mailService.sendEmail().then(result => console.log(result));
   }
 }
