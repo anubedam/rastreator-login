@@ -1,1 +1,20 @@
-<p>header-menu</p>
+<header class="header">
+    <img class="header__logo-adeslas" src="assets/icons/logo-adeslas.png" alt="logo adeslas">
+
+    <div class="contact">
+        <div class="contact__business-name">
+            {{ contactData.businessName }}
+        </div>
+
+        <div class="contact-data">
+            <div class="phone">
+                <mat-icon class="phone__icon" aria-hidden="false" aria-label="phone icon" fontIcon="call"></mat-icon>
+                <span class="phone__number">{{ contactData.phone }}</span>
+            </div>
+
+            <div class="contact-data__schedule">
+                {{ contactData.schedule }}
+            </div>
+        </div>
+    </div>
+</header>
