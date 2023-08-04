@@ -1,1 +1,16 @@
-<p>footer-links</p>
+<div class="footer-links">
+    <nav class="legal">
+       <ul class="legal__options">
+            <li *ngFor="let legalOption of legalOptions">
+                <a href="http://www.google.com" target="_blank">{{ legalOption }}</a>
+            </li>
+       </ul> 
+    </nav>
+
+    <hr class="footer-links__separator"/>
+    
+    <div class="privacy-policy">
+        <span class="privacy-policy__advice">{{ adviceText }}</span>
+        <mat-icon class="privacy-policy__icon" aria-hidden="false" aria-label="arrow down icon" fontIcon="expand_more"></mat-icon>
+    </div>
+</div>

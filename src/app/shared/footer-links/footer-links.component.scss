@@ -1,0 +1,129 @@
+@use "../../sass/colors";
+@use "../../sass/typography";
+@use "../../sass/breakpoints";
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$background-color-footer;
+    padding: 16px;
+
+    &__separator {
+        width: 100%;
+        height: 0.5px;
+        order: 2;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .footer-links {
+        flex-direction: row;
+        padding: 40px 24px;
+        justify-content: space-between;
+        align-items: center;
+
+        &__separator {
+            display: none;
+        }
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .footer-links {
+        padding: 47px 140px;
+    }
+}
+
+.legal {
+    order: 3;
+    
+    &__options {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        li{
+            a{
+                font-family: typography.$rising-sun-font;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 18px;
+                color: colors.$white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .legal {
+        order: 1;
+
+        &__options {
+            gap: 16px;
+
+            li{
+                a{
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .legal {        
+        &__options {    
+            li{
+                a{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.privacy-policy {
+    color: colors.$white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    order: 1;
+
+    &__advice {
+        font-family: typography.$rising-sun-font;
+        font-size: 12px;
+        font-weight: 400px;
+        line-height: 18px;
+    }
+
+    &__icon {
+        font-size: 24px;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .privacy-policy {
+        order: 2;
+        gap: 4px;
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .privacy-policy {
+        gap: 10px;
+    
+        &__advice {
+            font-size: 14px;
+        }
+    }   
+}
