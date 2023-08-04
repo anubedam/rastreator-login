@@ -1,5 +1,6 @@
 @use "../../sass/colors";
 @use "../../sass/typography";
+@use "../../sass/breakpoints";
 
 .footer-links {
     display: flex;
@@ -15,7 +16,7 @@
 }
 
 /* From md */
-@media (min-width: 900px) {
+@media (min-width: breakpoints.$min-md) {
     .footer-links {
         flex-direction: row;
         padding: 40px 24px;
@@ -29,7 +30,7 @@
 }
 
 /* From lg */
-@media (min-width: 1200px) {
+@media (min-width: breakpoints.$min-lg) {
     .footer-links {
         padding: 47px 140px;
     }
@@ -59,7 +60,7 @@
 }
 
 /* From md */
-@media (min-width: 900px) {
+@media (min-width: breakpoints.$min-md) {
     .legal {
         order: 1;
 
@@ -76,7 +77,7 @@
 }
 
 /* From lg */
-@media (min-width: 1200px) {
+@media (min-width: breakpoints.$min-lg) {
     .legal {        
         &__options {    
             li{
@@ -109,7 +110,7 @@
 }
 
 /* From md */
-@media (min-width: 900px) {
+@media (min-width: breakpoints.$min-md) {
     .privacy-policy {
         order: 2;
         gap: 4px;
@@ -117,7 +118,7 @@
 }
 
 /* From lg */
-@media (min-width: 1200px) {
+@media (min-width: breakpoints.$min-lg) {
     .privacy-policy {
         gap: 10px;
     
