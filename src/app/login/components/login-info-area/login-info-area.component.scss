@@ -1,10 +1,29 @@
 @use "../../../sass/typography";
 @use "../../../sass/colors";
+@use "../../../sass//breakpoints";
 
 .info-area-container {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 311px;
+    height: 335px;
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .info-area-container {
+        width: 672px;
+        height: 132px;
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .info-area-container {
+        width: 449px;
+        height: 345px;
+    }
 }
 
 .h1 {
@@ -27,16 +46,60 @@
     }
 }
 
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .h1 {
+        width: 672px;
+        height: 84px;
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .h1 {
+        gap: unset;
+        width: 449px;
+        height: 112px;
+        font-size: 38px;
+        line-height: 48px;
+    }
+}
+
 .h2-coverages {
     display: flex;
     flex-direction: column ;
     gap: 24px;
+    width: 311px;
+    height: 181px;
 
     h2{
         font-family: typography.$rising-sun-font;
         font-size: 28px;        
         font-weight: 400;
         line-height: 32px;
+        margin-bottom: 0;
+    }
+}
+
+/* from md */
+@media (min-width: breakpoints.$min-md) {
+    .h2-coverages {
+        width: 672px;
+        height: 132px;
+    }    
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .h2-coverages {
+        gap: 16px;
+        width: 340px;
+        height: 201px;
+    
+        h2{
+            font-size: 32px;        
+            line-height: 36px;
+        }
     }
 }
 
@@ -67,5 +130,15 @@
         font-size: 14px;        
         font-weight: 400;
         line-height: 18px;
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .coverage {
+        &__text {
+            font-size: 16px;        
+            line-height: 22px;
+        }
     }
 }
