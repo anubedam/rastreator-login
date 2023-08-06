@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { LoginFormAndMessageComponent } from './login-form-and-message/login-form-and-message.component';
 import { LoginInfoAreaComponent } from './login-info-area/login-info-area.component';
+import { BaseModule } from 'src/app/base/base.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { LoginInfoAreaComponent } from './login-info-area/login-info-area.compon
     LoginInfoAreaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BaseModule,
+    SharedModule
   ],
   exports: [
     LoginFormAndMessageComponent,

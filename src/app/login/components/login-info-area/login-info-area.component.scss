@@ -1,0 +1,71 @@
+@use "../../../sass/typography";
+@use "../../../sass/colors";
+
+.info-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 259px;
+    height: 122px;
+    font-family: typography.$rising-sun-font;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+
+    &__Text1 {
+        color: colors.$adeslas-color;
+    }
+
+    &__Text2 {
+        color: colors.$secondary-color;
+    }
+}
+
+.h2-coverages {
+    display: flex;
+    flex-direction: column ;
+    gap: 24px;
+
+    h2{
+        font-family: typography.$rising-sun-font;
+        font-size: 28px;        
+        font-weight: 400;
+        line-height: 32px;
+    }
+}
+
+.coverages {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 0;
+}
+
+.coverage {
+    display: flex;
+    flex: row;
+    align-items: start;
+    gap: 16px;
+
+    &__list-item-icon {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+        color: colors.$secondary-color;
+    }
+
+    &__text {
+        font-family: typography.$rising-sun-font;
+        font-size: 14px;        
+        font-weight: 400;
+        line-height: 18px;
+    }
+}
