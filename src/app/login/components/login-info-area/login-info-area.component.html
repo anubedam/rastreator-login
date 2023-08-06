@@ -1,2 +1,17 @@
 <div class="info-area-container">
+    <div class="h1">
+        <span class="h1__Text1">{{ h1Text1 }}</span>
+        <span class="h1__Text2">{{ h1Text2 }}</span>
+    </div>
+
+    <div class="h2-coverages">
+        <h2>{{ h2Text }}</h2>
+
+        <ul class="coverages">
+            <li class="coverage" *ngFor="let coverage of adeslasCoverages">
+                <mat-icon class="coverage__list-item-icon" aria-hidden="false" aria-label="list item icon" fontIcon="done"></mat-icon>
+                <span class="coverage__text" [innerHTML]="coverage"></span>
+            </li>
+        </ul>
+    </div>
 </div>

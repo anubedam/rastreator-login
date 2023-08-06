@@ -8,7 +8,7 @@ import { BaseModule } from '../base/base.module';
 @NgModule({
   declarations: [
     HeaderMenuComponent,
-    FooterLinksComponent
+    FooterLinksComponent,
   ],
   imports: [
     CommonModule,
@@ -16,7 +16,7 @@ import { BaseModule } from '../base/base.module';
   ],
   exports: [
     HeaderMenuComponent,
-    FooterLinksComponent
+    FooterLinksComponent,
   ]
 })
 export class SharedModule { }
