@@ -1,0 +1,57 @@
+@use "../sass/breakpoints";
+
+.login-main-area {
+    margin: 8px 18px 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &__info-area {
+        min-width: 324px;
+        min-height: 335px;
+        background-color: lightblue;
+    }
+
+    &__form-and-message {
+        min-width: 324px;
+        min-height: 526px;
+        background-color: lightgreen;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .login-main-area {
+        margin: 15px 0 47px 0;
+
+        &__info-area {
+            min-width: 672px;
+            min-height: 248px;
+        }
+    
+        &__form-and-message {
+            min-width: 672px;
+            min-height: 612px;
+        }
+    }
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .login-main-area {
+        margin: 47px 140px 79px 140px;
+        flex-direction: row;
+        gap: unset;         
+        justify-content: space-between;
+
+        &__info-area {
+            min-width: 449px;
+            min-height: 345px;
+        }
+    
+        &__form-and-message {
+            min-width: 480px;
+            min-height: 612px;
+        }
+    }
+}
