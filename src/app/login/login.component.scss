@@ -1,7 +1,7 @@
 @use "../sass/breakpoints";
 
 .login-main-area {
-    margin: 8px 18px 24px 18px;
+    padding: 8px 18px 24px 18px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -22,7 +22,7 @@
 /* From md */
 @media (min-width: breakpoints.$min-md) {
     .login-main-area {
-        margin: 15px 0 47px 0;
+        padding: 15px auto 47px auto;
 
         &__info-area {
             min-width: 672px;
@@ -39,7 +39,7 @@
 /* From lg */
 @media (min-width: breakpoints.$min-lg) {
     .login-main-area {
-        margin: 47px 140px 79px 140px;
+        padding: 47px 140px 79px 140px;
         flex-direction: row;
         gap: unset;         
         justify-content: space-between;
