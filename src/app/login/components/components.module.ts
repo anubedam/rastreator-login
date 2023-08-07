@@ -5,11 +5,13 @@ import { LoginFormAndMessageComponent } from './login-form-and-message/login-for
 import { LoginInfoAreaComponent } from './login-info-area/login-info-area.component';
 import { BaseModule } from 'src/app/base/base.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { LoginSucessMessageComponent } from './login-sucess-message/login-sucess-message.component';
 
 @NgModule({
   declarations: [
     LoginFormAndMessageComponent,
-    LoginInfoAreaComponent
+    LoginInfoAreaComponent,
+    LoginSucessMessageComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   exports: [
     LoginFormAndMessageComponent,
-    LoginInfoAreaComponent
+    LoginInfoAreaComponent,
+    LoginSucessMessageComponent
   ]
 })
 export class ComponentsModule { }

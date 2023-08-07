@@ -1,0 +1,58 @@
+@use "../../../sass/colors";
+@use "../../../sass/typography";
+@use "../../../sass/breakpoints";
+
+.login-success {
+    min-width: 324px;
+    min-height: 526px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$adeslas-color;
+
+    &__icon {
+        font-size: 115px;
+        width: 115px;
+        height: 115px;
+        color: colors.$white;
+    }
+
+    &__contact-you {
+        font-family: typography.$rising-sun-font;
+        padding-inline: 16px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: center;
+        color: colors.$white;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .login-success {
+        min-width: 672px;
+        min-height: 612px;
+    
+        &__icon {
+            font-size: 140px;
+            width: 140px;
+            height: 140px;
+        }
+    
+        &__contact-you {
+            padding-inline: 72;
+            font-weight: 600;
+        }
+    }    
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .login-success {
+        width: 480px;
+        min-width: unset;
+    }
+}
