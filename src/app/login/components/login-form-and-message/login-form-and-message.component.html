@@ -1,3 +1,11 @@
 <div class="form-and-message-container">
-    <app-login-sucess-message></app-login-sucess-message>
+    <app-login-sucess-message *ngIf="emailSent; else loginForm"></app-login-sucess-message>
+
+    <ng-template #loginForm>
+        <div class="loginForm">
+            <mat-card class="loginForm__card">
+                <mat-card-content>Simple card</mat-card-content>
+            </mat-card>
+        </div>
+    </ng-template>
 </div>

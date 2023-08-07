@@ -1,0 +1,35 @@
+@use "../../../sass/breakpoints";
+
+.loginForm {
+    min-width: 324px;
+    min-height: 526px;
+
+    &__card {
+        min-width: 324px;
+        min-height: 526px;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .loginForm {
+        min-width: 672px;
+        min-height: 612px;
+
+        &__card {
+            min-width: 672px;
+            min-height: 612px;
+        }
+    }   
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .loginForm {
+        min-width: 480px;
+
+        &__card {
+            min-width: 480px;
+        }
+    }
+}
