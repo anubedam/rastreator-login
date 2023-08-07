@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-form-and-message.component.scss']
 })
 export class LoginFormAndMessageComponent {
+  formTitle = '¡Te llamamos gratis!';
   emailSent = false;
 
 }
