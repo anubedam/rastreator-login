@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterLinksComponent } from './footer-links.component';
+import { BaseModule } from 'src/app/base/base.module';
 
 describe('FooterLinksComponent', () => {
   let component: FooterLinksComponent;
@@ -8,7 +9,8 @@ describe('FooterLinksComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FooterLinksComponent]
+      declarations: [FooterLinksComponent],
+      imports: [BaseModule]
     });
     fixture = TestBed.createComponent(FooterLinksComponent);
     component = fixture.componentInstance;
