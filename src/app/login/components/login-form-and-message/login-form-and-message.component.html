@@ -8,7 +8,27 @@
                     {{ formTitle}}
                 </mat-card-title>
                 <mat-card-content class="card-content">
-                    Contenido
+                    <form [formGroup]="loginForm" (ngSubmit)="sendForm()">
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>{{ nameLabelField }}</mat-label>
+                            <input matInput formControlName="name">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>{{ phoneLabelField }}</mat-label>
+                            <input matInput formControlName="phone">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>{{ emailLabelField }}</mat-label>
+                            <input matInput formControlName="email">
+                        </mat-form-field>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>{{ dniLabelField }}</mat-label>
+                            <input matInput formControlName="dni">
+                        </mat-form-field>
+                    </form>
                 </mat-card-content>
             </mat-card>
         </div>
