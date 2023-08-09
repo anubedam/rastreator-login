@@ -57,10 +57,16 @@
                             </mat-radio-group>
                         </div>
 
-                        <div *ngIf="adviceText" class="accept-area">
+                        <div *ngIf="adviceText" class="form-field">
                             <mat-checkbox formControlName="accept">
-                                <span class="accept-area__label" [innerHTML]="adviceText"></span>
-                            </mat-checkbox>                      
+                                <span class="accept-label" [innerHTML]="adviceText"></span>
+                            </mat-checkbox>
+
+                            <mat-error class="form-field__errors" *ngIf="hasErrors('accept') && errorMessages">
+                                <span class="accept-error" *ngFor="let errorDescription of getErrors('accept')">
+                                    {{ errorDescription }}
+                                </span>
+                            </mat-error>
                         </div>
 
                         <button class="form-field send-button" mat-raised-button color="accent">

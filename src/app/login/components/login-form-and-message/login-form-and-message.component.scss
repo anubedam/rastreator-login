@@ -126,14 +126,15 @@ button.send-button {
     line-height: 22px;
 }
 
-.accept-area {
-    margin-left: 0;
     
-    &__label {
-        font-family: typography.$rising-sun-font;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18px;
-        color: colors.$grey-scale;
-    }
+.accept-label {
+    font-family: typography.$rising-sun-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: colors.$grey-scale;
+}
+
+.accept-error {
+    padding-left: 10px;
 }
