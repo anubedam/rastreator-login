@@ -8,7 +8,7 @@
                     {{ formTitle}}
                 </mat-card-title>
                 <mat-card-content class="card-content">
-                    <form [formGroup]="loginForm" (ngSubmit)="sendForm()">
+                    <form [formGroup]="formLogin" (ngSubmit)="sendForm()">
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>{{ nameLabelField }}</mat-label>
                             <input matInput formControlName="name">
@@ -28,6 +28,10 @@
                             <mat-label>{{ dniLabelField }}</mat-label>
                             <input matInput formControlName="dni">
                         </mat-form-field>
+
+                        <button class="send-button" mat-raised-button color="accent">
+                            {{ sendButtonText }}
+                        </button>
                     </form>
                 </mat-card-content>
             </mat-card>

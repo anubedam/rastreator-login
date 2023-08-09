@@ -22,10 +22,12 @@ export class LoginFormAndMessageComponent {
 
   adviceText = 'He leído y acepto el <a>Aviso Legal</a> y la <a>Política de Privacidad</a>';
 
-  loginForm: FormGroup;
+  sendButtonText = 'Enviar';
+
+  formLogin: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
+    this.formLogin = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -36,9 +38,9 @@ export class LoginFormAndMessageComponent {
   }
   
   sendForm(): void {
-    if (this.loginForm.invalid) {
+    if (this.formLogin.invalid) {
       // If form has erros don't let send email
-      this.loginForm.markAllAsTouched();
+      this.formLogin.markAllAsTouched();
       return;
     }
 

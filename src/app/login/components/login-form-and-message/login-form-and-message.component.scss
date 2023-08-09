@@ -82,3 +82,13 @@
 .form-field {
     width: 100%;
 }
+
+button.send-button {
+    width: 100%;
+    padding: 30px 50px;
+    border-radius: 6px;
+    font-family: typography.$rising-sun-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
