@@ -5,6 +5,7 @@ import { LoginInfoAreaComponent } from './components/login-info-area/login-info-
 import { LoginFormAndMessageComponent } from './components/login-form-and-message/login-form-and-message.component';
 import { LoginSucessMessageComponent } from './components/login-sucess-message/login-sucess-message.component';
 import { BaseModule } from '../base/base.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -13,7 +14,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [LoginComponent, LoginInfoAreaComponent, LoginFormAndMessageComponent, LoginSucessMessageComponent],
-      imports: [BaseModule]
+      imports: [BaseModule, BrowserAnimationsModule]
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;

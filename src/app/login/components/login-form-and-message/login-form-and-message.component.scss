@@ -1,0 +1,140 @@
+@use "../../../sass/breakpoints";
+@use "../../../sass/colors";
+@use "../../../sass/typography";
+
+.loginForm {
+    min-width: 324px;
+    min-height: 526px;
+
+    &__card {
+        min-width: 324px;
+        min-height: 526px;
+    }
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .loginForm {
+        min-width: 672px;
+        min-height: 612px;
+
+        &__card {
+            min-width: 672px;
+            min-height: 612px;
+        }
+    }   
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .loginForm {
+        min-width: 480px;
+
+        &__card {
+            min-width: 480px;
+        }
+    }
+}
+
+.card-title {
+    background-color: colors.$adeslas-color;
+    color: colors.$white;
+    font-family: typography.$rising-sun-font;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 16px;
+    border-radius: 6px, 6px, 0px, 0px;
+    text-align: center;
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .card-title {
+        font-size: 24px;
+        line-height: 32px;
+        padding: 24px;
+    }
+}
+
+.card-content {
+    padding: 16px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* From md */
+@media (min-width: breakpoints.$min-md) {
+    .card-content {
+        padding: 32px, 56px, 32px, 56px;
+    }   
+}
+
+/* From lg */
+@media (min-width: breakpoints.$min-lg) {
+    .card-content {
+        padding: 32px;
+    }
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.schedule-time {
+    width: 100%;
+    font-family: typography.$rising-sun-font;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+
+    &__contact-label {
+        font-weight: 600;
+        color: colors.$grey-scale;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__contact-option {
+        font-weight: 400;
+        color: colors.$grey-scale;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.accept-area {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+button.send-button {
+    margin-top: 16px;
+    width: 100%;
+    padding: 30px 50px;
+    border-radius: 6px;
+    font-family: typography.$rising-sun-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+    
+.accept-label {
+    font-family: typography.$rising-sun-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: colors.$grey-scale;
+}
+
+.accept-error {
+    padding-left: 10px;
+}
