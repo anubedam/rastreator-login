@@ -81,9 +81,42 @@
 
 .form-field {
     width: 100%;
+    margin-bottom: 8px;
+}
+
+.schedule-time {
+    width: 100%;
+    font-family: typography.$rising-sun-font;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+
+    &__contact-label {
+        font-weight: 600;
+        color: colors.$grey-scale;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__contact-option {
+        font-weight: 400;
+        color: colors.$grey-scale;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.accept-area {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 button.send-button {
+    margin-top: 16px;
     width: 100%;
     padding: 30px 50px;
     border-radius: 6px;
@@ -91,4 +124,16 @@ button.send-button {
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+}
+
+.accept-area {
+    margin-left: 0;
+    
+    &__label {
+        font-family: typography.$rising-sun-font;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: colors.$grey-scale;
+    }
 }
