@@ -2,7 +2,7 @@
     <nav class="legal">
        <ul class="legal__options">
             <li *ngFor="let legalOption of legalOptions">
-                <a href="http://www.google.com" target="_blank">{{ legalOption }}</a>
+                <a [href]="legalOption.url" target="_blank">{{ legalOption.text }}</a>
             </li>
        </ul> 
     </nav>
