@@ -22,6 +22,7 @@ export class MailService {
       
     <p>Gracias por confiar en Rastreator.com para tus negocios</p>`;
 
+    // INFO: Not sending email to email destination for avoid RGPD problems
     const data: SendEmailV3_1.Body = {
       Messages: [
         {
@@ -31,7 +32,7 @@ export class MailService {
           },
           To: [
             {
-              Email: `${toEmail}`,
+              Email: `${environment.hardcodedDestMail}`,
               Name: `${toName}`
             },
           ],
