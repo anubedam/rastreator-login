@@ -9,10 +9,7 @@ import { MailService } from './shared/services/mail.service';
 export class AppComponent implements OnInit{
   title = 'rastreator-login';
 
-  constructor(private mailService: MailService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    // ONLY FOR DEMO PURPOSE -- Send email test
-    // this.mailService.sendEmail().then(result => console.log(result));
-  }
+  ngOnInit(): void {}
 }

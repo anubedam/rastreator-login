@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginErrors } from 'src/app/shared/interfaces/login-error.interface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { MailService } from 'src/app/shared/services/mail.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const MAX_LENGTH_NAME = 2;
 
@@ -27,12 +29,13 @@ export class LoginFormAndMessageComponent implements OnInit {
   adviceText!: SafeHtml;
 
   sendButtonText = 'Enviar';
+  thereWasAnErrorText = 'Se ha producido un error al enviar su email';
 
   errorMessages!: LoginErrors;
 
   formLogin: FormGroup;
 
-  constructor(private fb: FormBuilder, private domSanitizer: DomSanitizer) {
+  constructor(private fb: FormBuilder, private domSanitizer: DomSanitizer, private mailService: MailService, private snackBar: MatSnackBar) {
     this.formLogin = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(MAX_LENGTH_NAME)]],
       phone: ['', [Validators.required]],
@@ -60,11 +63,16 @@ export class LoginFormAndMessageComponent implements OnInit {
   }
   
   sendEmail(): void {
-    const emailData = this.formLogin.value;
-    console.log('¡Email was sent!', emailData);
-    
-    // Render success mesage
-    this.emailSent = true;   
+    const { name, email, phone } = this.formLogin.value;
+
+    this.mailService.sendEmail(name, email, phone)
+      .then(resp => {
+        // Render success mesage
+        this.emailSent = true;
+      })
+      .catch(err => {
+        this.snackBar.open(this.thereWasAnErrorText);
+      });
   }
 
   getErrorMessagesDomains(): void {

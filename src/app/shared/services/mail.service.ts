@@ -1,37 +1,43 @@
 import { Injectable } from '@angular/core';
 
-import { Client, SendEmailV3_1, LibraryResponse } from 'node-mailjet';
-import { RequestData } from 'node-mailjet/declarations/request/Request';
-
-const API_KEY_PUBLIC = 'ef2b1c7310a5a4a97f9690236809af21';
-const API_KEY_PRIVATE = '4cbc440d8d97eccf8da73353e8d8228a';
-
-export const mailjet = new Client({
-  apiKey: API_KEY_PUBLIC,
-  apiSecret: API_KEY_PRIVATE
-});
+import { Client, SendEmailV3_1 } from 'node-mailjet';
+import { environment } from 'src/environments/environment';
+import { MailServiceResponse } from '../interfaces/mail-service-response.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailService {
-  sendEmail(): Promise<any> {
+  mailjet = new Client({
+    apiKey: environment.mailPublicApiKey,
+    apiSecret: environment.mailPrivateApiKey
+  });
 
+  sendEmail(toName: string, toEmail: string, toPhone: string): Promise<MailServiceResponse> {
+    const mailTemplate = `<h1>¡Hemos recibido su petición!</h1>
+    <p>${toName},</p>
+    <p>
+      Nos pondremos en contacto contigo a través del correo <strong>${toEmail}</strong>, o del teléfono <strong>${toPhone}</strong>
+    </p>
+      
+    <p>Gracias por confiar en Rastreator.com para tus negocios</p>`;
+
+    // INFO: Not sending email to email destination for avoid RGPD problems
     const data: SendEmailV3_1.Body = {
       Messages: [
         {
           From: {
-            Email: 'anubedam@gmail.com',
-            Name: 'Sender name'
+            Email: environment.fromEmail,
+            Name: environment.fromName
           },
           To: [
             {
-              Email: 'anubedam@gmail.com',
-              Name: 'Destination email'
+              Email: `${environment.hardcodedDestMail}`,
+              Name: `${toName}`
             },
           ],
-          Subject: 'Antonio Úbeda Montero Tech Proof',
-          HTMLPart: '<h1>Email was sent successfully!</h1><br/>We can continue with job offer :)',
+          Subject: 'Prueba técnica - Antonio Úbeda Montero',
+          HTMLPart: mailTemplate,
         }
       ],
     };
@@ -39,16 +45,16 @@ export class MailService {
     return this.callToMailjet(data);
   }
 
-  async callToMailjet(data: SendEmailV3_1.Body): Promise<any> {
+  async callToMailjet(data: SendEmailV3_1.Body): Promise<MailServiceResponse> {
      try {
-        const response = await mailjet
+        const response = await this.mailjet
           .post('send', { version: 'v3.1' })
           .request(data);
-        return response.response.status;
+        return Promise.resolve({ status: response.response.status });
 
      } catch (err) {
         console.log('Se ha producido un error', err);
-        return err;
+        return Promise.reject({ status: 500, response: err});
      }  
   }
 }
